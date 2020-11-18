@@ -23,6 +23,7 @@
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
             <input class="input" type="text" id="name" name="name" placeholder="Enter Your Name" required>
+            <error-output class="text-error" for="name"></error-output>
             </div>    
         <div class="row-content">
             <label class="label text" for="profile">Profile image</label>
@@ -147,7 +148,7 @@
                 </div>
             </div>
             <div class="row-content">
-                <label class="label text" for="notes">Notes</label>
+                <label class="label text notes" for="notes">Notes</label>
                 <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
             </div>
             <div class="buttonParent">
@@ -167,6 +168,15 @@
             output.textContent = salary.value;
             salary.addEventListener('input', function(){
                                      output.textContent = salary.value;
+        });
+
+        const text = document.querySelector('#name');
+        const textError = document.querySelector('.text-error');
+        text.addEventListener('input', function(){
+            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+            if(nameRegex.test(text.value))
+            textError.textContent = "";
+            else textError.textContent = "Name is Incorrect";
         });
         </script>
     </body>

@@ -237,3 +237,11 @@ label{
         align-items: flex-start;
     }
 }
+.notes{
+    height: 130px;
+}
+error-output{
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+}
