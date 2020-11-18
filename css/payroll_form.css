@@ -238,7 +238,8 @@ label{
     }
 }
 .notes{
-    height: 130px;
+    height: 140px;
+    margin-top: 10px;
 }
 error-output{
     font-size: 15px;
