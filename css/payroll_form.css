@@ -215,9 +215,6 @@ label{
     .row{
         flex-direction: column;
     }
-    .uploadButton{
-        justify-content: flex-start;
-    }
     .profile-radio-button{
         flex-flow: wrap;
     }
