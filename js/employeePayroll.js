@@ -40,7 +40,9 @@ class EmployeePayrollData{
 
     get startDate(){ return this._startDate;}
     set startDate(startDate){
-        this._startDate = startDate;
+        if(new Date(startDate.toDateString()) <= new Date(new Date().toDateString()))
+        this._startDate=startDate;
+        else throw 'Please enter a valid start date!';
     }
 
     toString(){
