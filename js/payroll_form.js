@@ -13,6 +13,16 @@ window.addEventListener('DOMContentLoaded',(event) => {
             textError.textContent = e;
         }
 });
+    const year = document.querySelector('#year');
+    const dateError = document.querySelector('.date-error');
+    year.addEventListener('input', function() {
+        try{
+            (new EmployeePayrollData()).startDate = new Date(parseInt(getInputValueById('#year')), parseInt(getInputValueById('#month')), parseInt(getInputValueById('#day')));
+            dateError.textContent = "";
+        } catch (e) {
+            dateError.textContent = e;
+        }
+    })
 
 const salary = document.querySelector('#salary');
 const output = document.querySelector('.salary-output');
