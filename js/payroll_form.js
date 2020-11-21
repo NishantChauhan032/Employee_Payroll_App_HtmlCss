@@ -87,4 +87,29 @@ const getInputValueById = (id) => {
     return value;
 }
 
+resetForm = () => {
+    setValue('#name','');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=department]');
+    setValue('#salary','');
+    setValue('#notes','');
+    setValue('#day','Day');
+    setValue('#month','Month');
+    setValue('#year','Year');
+}
+
+const unsetSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        item.checked = false;
+    });
+}
+
+const setValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
+
 
