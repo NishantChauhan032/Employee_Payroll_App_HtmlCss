@@ -99,6 +99,7 @@ resetForm = () => {
     setValue('#month','Month');
     setValue('#year','Year');
     setTextValue(".text-error",'');
+    setTextValue(".date-error",'');
 }
 
 const unsetSelectedValues = (propertyValue) => {
