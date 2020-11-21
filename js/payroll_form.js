@@ -93,10 +93,12 @@ resetForm = () => {
     unsetSelectedValues('[name=gender]');
     unsetSelectedValues('[name=department]');
     setValue('#salary','');
+    setTextValue('#salID',400000);
     setValue('#notes','');
     setValue('#day','Day');
     setValue('#month','Month');
     setValue('#year','Year');
+    setTextValue(".text-error",'');
 }
 
 const unsetSelectedValues = (propertyValue) => {
@@ -110,6 +112,12 @@ const setValue = (id,value) => {
     const element = document.querySelector(id);
     element.value = value;
 }
+
+const setTextValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
+
 
 
 
