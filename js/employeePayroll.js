@@ -40,15 +40,13 @@ class EmployeePayrollData{
 
     get startDate(){ return this._startDate;}
     set startDate(startDate){
-        if(new Date(startDate.toDateString()) <= new Date(new Date().toDateString()))
         this._startDate=startDate;
-        else throw 'Please enter a valid start date!';
     }
 
     toString(){
         const options = { year: 'numeric',month:'long',day:'numeric'};
         const empDate = !this.startDate?"undefined":this.startDate.toLocaleDateString("en-US",options);
-        return "id = " + this.id +", name = " +this.name +", gender= "+this.gender+", profilePic= "+this.profilePic+", department= "+this.department+
-        ", salary= "+this.salary+", startDate= "+empDate+", note= "+this.note;
+        return "id = " + this.id +"\n name = " +this.name +"\n gender= "+this.gender+"\n profilePic= "+this.profilePic+"\n department= "+this.department+
+        "\n salary= "+this.salary+"\n startDate= "+empDate+"\n note= "+this.note;
     }
 }
