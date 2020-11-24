@@ -53,16 +53,6 @@ function createAndUpdateStorage(employeePayrollData){
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
 
-function getId(){
-    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-    let length;
-        if (employeePayrollList != undefined){
-            length = employeePayrollList.length;
-        } else {
-            length = 0;
-        }
-    return length;
-}
 
 const createEmployeePayroll = () => {
     let employeePayrollData = new EmployeePayrollData();
