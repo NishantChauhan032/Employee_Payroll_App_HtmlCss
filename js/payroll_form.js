@@ -1,10 +1,11 @@
+
 window.addEventListener('DOMContentLoaded',(event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
     name.addEventListener('input', function(){
         if(name.value.length==0){
             textError.textContent ="";
-            return
+            return;
         }
         try{
             (new EmployeePayrollData()).name  = name.value;
@@ -53,6 +54,17 @@ function createAndUpdateStorage(employeePayrollData){
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
 
+function getId(){
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    let length;
+        if (employeePayrollList != undefined){
+            length = employeePayrollList.length;
+        } else {
+            length = 0;
+        }
+    return length;
+}
+
 const createEmployeePayroll = () => {
     let employeePayrollData = new EmployeePayrollData();
     try{
@@ -68,6 +80,7 @@ const createEmployeePayroll = () => {
     employeePayrollData.note = getInputValueById('#notes');
     let date  = new Date(getInputValueById('#year'),getInputValueById('#month'),getInputValueById('#day'));
     employeePayrollData.startDate = date;
+    employeePayrollData.id = getId();
     let toPrint = employeePayrollData.toString();
     alert(toPrint);
     return employeePayrollData;
