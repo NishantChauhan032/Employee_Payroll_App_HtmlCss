@@ -1,4 +1,3 @@
-
 window.addEventListener('DOMContentLoaded',(event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
@@ -80,7 +79,7 @@ const createEmployeePayroll = () => {
     employeePayrollData.note = getInputValueById('#notes');
     let date  = new Date(getInputValueById('#year'),getInputValueById('#month'),getInputValueById('#day'));
     employeePayrollData.startDate = date;
-    employeePayrollData.id = getId();
+    employeePayrollData.id = new Date().getTime();
     let toPrint = employeePayrollData.toString();
     alert(toPrint);
     return employeePayrollData;
